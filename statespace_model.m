@@ -35,7 +35,7 @@ Twy = windtorques(2);
 Twz = windtorques(3);
 
 
-phi_p = p + r*(cos(phi*tan(th))) + q*(sin(phi)*tan(th));
+phi_p = p + r*(cos(phi)*tan(th)) + q*(sin(phi)*tan(th));
 th_p = q*(cos(phi))-r*(sin(phi));
 psi_p = r*(cos(phi)/cos(th))+q*(sin(phi)/cos(th));
 
