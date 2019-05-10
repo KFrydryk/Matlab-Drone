@@ -40,8 +40,8 @@ Twz = windtorques(3);
 
 
 phi_p = p + r*th + q*phi*th;
-th_p = q*-r*phi;
-psi_p = r*+q*phi;
+th_p = q-r*phi;
+psi_p = r+q*phi;
 
 p_p = ((Iy-Iz)/Ix)*r*q+((Tx+Twx)/Ix);
 q_p = ((Iz-Ix)/Iy)*p*r+((Ty+Twy)/Iy);
