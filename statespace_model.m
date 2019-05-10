@@ -1,6 +1,8 @@
 function [out] = statespace_model(in)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
+%possible bug with 0*g in w calculations!!
+
 global I m g
 Ix = I(1,1);
 Iy = I(2,2);
@@ -45,7 +47,7 @@ r_p = ((Ix-Iy)/Iz)*p*q+((Tz-Twz)/Iz);
 
 u_p = r*v-q*w-g*(sin(th))+fwx/m;
 v_p = p*w-r*u+g*(sin(phi)*cos(th))+fwy/m;
-w_p = q*u - p*v + g*(cos(th)*cos(phi)) + (fwz-ft)/m;
+w_p = q*u - p*v + 0*g*(cos(th)*cos(phi)) + (fwz-ft)/m;
 
 x_p = w*(sin(phi)*sin(psi)+cos(phi)*cos(psi)*sin(th))-v*(cos(phi)*sin(psi)-cos(psi)*sin(phi)*sin(th))+u*(cos(psi)*cos(th));
 y_p = v*(cos(phi)*cos(psi)+sin(phi)*sin(psi)*sin(th))-w*(cos(psi)*sin(phi)-cos(phi)*sin(psi)*sin(th))+u*(cos(phi)*sin(psi));
